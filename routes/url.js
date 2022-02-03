@@ -37,7 +37,7 @@ router.post("/todo", async(req, res) => {
 
 router.put("/todo/:id", async(req, res) => {
     try {
-        const { id } = req.params; //http://localhost:5500//urltodo/2      // put to update new data
+        const { id } = req.params; //http://localhost:5500//url/todo/2      // put to update new data
         const { description } = req.body;
         const updateTodo = await pool.query(
             "UPDATE todo SET description = $1 WHERE todo_id = $2", [description, id]
